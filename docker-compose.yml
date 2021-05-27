@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    database:
+        image: postgres
+        container_name: queries_challenge
+        restart: always
+        environment: 
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=docker
+            - POSTGRES_DB=queries_challenge
+        volumes:
+            - pgdata:/data/postgres
+        network_mode: host
+
+volumes:
+    pgdata:
